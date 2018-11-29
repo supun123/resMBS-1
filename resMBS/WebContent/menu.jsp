@@ -26,7 +26,7 @@
 				<div class="menu_section">
 					<h3>General</h3>
 					<ul class="nav side-menu">
-							<li><a><i class="fa fa-sitemap"></i> 8 sample companies <span class="fa fa-chevron-down"></span></a>
+							<%-- <li><a><i class="fa fa-sitemap"></i> 8 sample companies <span class="fa fa-chevron-down"></span></a>
 								<ul class="nav child_menu">
 									<li><a><i class="fa fa-database"></i> SEC <span
 										class="fa fa-chevron-down"></span></a>
@@ -164,11 +164,7 @@
 						 <li><a><i class="fa fa-sitemap"></i> Sector 51 <span class="fa fa-chevron-down"></span></a>
 		                    <ul id="sector51_menu" class="nav child_menu">
 		                    </ul>
-		                  </li>
-						
-						<li><a href="http://opensource.lk/"> <i
-								class="fa fa-users" aria-hidden="true"></i> People
-						</a></li>
+		                  </li> --%>
 						<li><a><i class="fa fa-sitemap"></i>Topic model <span class="fa fa-chevron-down"></span></a>
 								<ul class="nav child_menu">
 									<li><a href="topic_mdl.jsp" id="sid_14">Topics</a></li>
@@ -177,7 +173,11 @@
 									<li><a href="prospectus_mdl.jsp" id="sid_14">Prospectus</a></li>
 								</ul>
 							</li>
-
+						
+						<li><a href="http://opensource.lk/"> <i
+								class="fa fa-users" aria-hidden="true"></i> People
+						</a></li>
+						
 						
 					</ul>
 				</div>
