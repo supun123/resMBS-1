@@ -123,63 +123,78 @@
 									<div class="x_content">
 
 										<div class="" role="tabpanel" data-example-id="togglable-tabs">
-											<ul id="myTab1" class="nav nav-tabs bar_tabs right"
-												role="tablist">
-												<li role="presentation" class="active"><a
-													href="#tab_content11"
-													onclick="getDataForGivenYear('2002','chart_2002','Graph_for_specific_topic_2002')"
-													id="home-tabb" role="tab" data-toggle="tab"
-													aria-controls="home" aria-expanded="true">2002</a></li>
-												<li role="presentation" class=""><a
-													href="#tab_content22"
-													onclick="getDataForGivenYear('2003','chart_2003','Graph_for_specific_topic_2003')"
-													role="tab" id="profile-tabb" data-toggle="tab"
-													aria-controls="profile" aria-expanded="false">2003</a></li>
-												<li role="presentation" class=""><a
-													href="#tab_content33"
-													onclick="getDataForGivenYear('2004','chart_2004','Graph_for_specific_topic_2004')"
-													role="tab" id="profile-tabb3" data-toggle="tab"
-													aria-controls="profile" aria-expanded="false">2004</a></li>
+											<div class="row">
+												<div class="col-md-6">
+													<ul id="myTab1" class="nav nav-tabs bar_tabs left "
+														role="tablist">
+														<li role="presentation" class="active"><a
+															href="#tab_content11"
+															onclick="getDataForGivenYear('2002','chart_2002','Graph_for_specific_topic_2002')"
+															id="home-tabb" role="tab" data-toggle="tab"
+															aria-controls="home" aria-expanded="true">2002</a></li>
+														<li role="presentation" class=""><a
+															href="#tab_content22"
+															onclick="getDataForGivenYear('2003','chart_2003','Graph_for_specific_topic_2003')"
+															role="tab" id="profile-tabb" data-toggle="tab"
+															aria-controls="profile" aria-expanded="false">2003</a></li>
+														<li role="presentation" class=""><a
+															href="#tab_content33"
+															onclick="getDataForGivenYear('2004','chart_2004','Graph_for_specific_topic_2004')"
+															role="tab" id="profile-tabb3" data-toggle="tab"
+															aria-controls="profile" aria-expanded="false">2004</a></li>
 
-												<li role="presentation" class=""><a
-													href="#tab_content44"
-													onclick="getDataForGivenYear('2005','chart_2005','Graph_for_specific_topic_2005')"
-													role="tab" id="profile-tabb4" data-toggle="tab"
-													aria-controls="profile" aria-expanded="false">2005</a></li>
-												<li role="presentation" class=""><a
-													href="#tab_content55"
-													onclick="getDataForGivenYear('2006','chart_2006','Graph_for_specific_topic_2006')"
-													role="tab" id="profile-tabb4" data-toggle="tab"
-													aria-controls="profile" aria-expanded="false">2006</a></li>
-												<li role="presentation" class=""><a
-													href="#tab_content66"
-													onclick="getDataForGivenYear('2007','chart_2007','Graph_for_specific_topic_2007')"
-													role="tab" id="profile-tabb4" data-toggle="tab"
-													aria-controls="profile" aria-expanded="false">2007</a></li>
-												<li role="presentation" class=""><a
-													href="#tab_content77"
-													onclick="getDataForGivenYear('2008','chart_2008','Graph_for_specific_topic_2008')"
-													role="tab" id="profile-tabb4" data-toggle="tab"
-													aria-controls="profile" aria-expanded="false">2008</a></li>
-											</ul>
+														<li role="presentation" class=""><a
+															href="#tab_content44"
+															onclick="getDataForGivenYear('2005','chart_2005','Graph_for_specific_topic_2005')"
+															role="tab" id="profile-tabb4" data-toggle="tab"
+															aria-controls="profile" aria-expanded="false">2005</a></li>
+														<li role="presentation" class=""><a
+															href="#tab_content55"
+															onclick="getDataForGivenYear('2006','chart_2006','Graph_for_specific_topic_2006')"
+															role="tab" id="profile-tabb4" data-toggle="tab"
+															aria-controls="profile" aria-expanded="false">2006</a></li>
+														<li role="presentation" class=""><a
+															href="#tab_content66"
+															onclick="getDataForGivenYear('2007','chart_2007','Graph_for_specific_topic_2007')"
+															role="tab" id="profile-tabb4" data-toggle="tab"
+															aria-controls="profile" aria-expanded="false">2007</a></li>
+														<li role="presentation" class=""><a
+															href="#tab_content77"
+															onclick="getDataForGivenYear('2008','chart_2008','Graph_for_specific_topic_2008')"
+															role="tab" id="profile-tabb4" data-toggle="tab"
+															aria-controls="profile" aria-expanded="false">2008</a></li>
+													</ul>
+												</div>
+											</div>
 											<div id="myTabContent2" class="tab-content">
 												<div role="tabpanel" class="tab-pane fade active in"
 													id="tab_content11" aria-labelledby="home-tab">
-													<div id="chart_2002"></div>
-													<div>
-														<h2 id=Prospectus_of_2002></h2>
+													<div class="row">
+														<div class="col-md-6 ">
+															<div id="chart_2002"></div>
+														</div>
+														<div class="col-md-6">
+
+															<div id=Prospectus_of_2002></div>
+
+															<div style="display: none;" class="x_content"
+																id="Graph_for_specific_topic_2002"></div>
+														</div>
 													</div>
-													<div style="display: none;" class="x_content"
-														id="Graph_for_specific_topic_2002"></div>
 												</div>
 												<div role="tabpanel" class="tab-pane fade"
 													id="tab_content22" aria-labelledby="profile-tab">
-													<div id="chart_2003"></div>
-													<div>
-														<h2 id=Prospectus_of_2003></h2>
-													</div>
-													<div style="display: none;" class="x_content"
-														id="Graph_for_specific_topic_2003"></div>
+													
+													
+															<div id="chart_2003"></div>
+													
+													
+															<div id=Prospectus_of_2003></div>
+
+															<div style="display: none;" class="x_content"
+																id="Graph_for_specific_topic_2003"></div>
+													
+													
 												</div>
 												<div role="tabpanel" class="tab-pane fade"
 													id="tab_content33" aria-labelledby="profile-tab">

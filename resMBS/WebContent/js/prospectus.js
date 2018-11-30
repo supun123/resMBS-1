@@ -205,18 +205,19 @@
 						} ]
 					}
 				},
-				axis : {
+				axis : { 
+					rotated: true,
 					x : {
 						label : {
 							text : 'topics',
 							position : 'outer-middle',
 						},
 						type : 'category',
-						categories : [ 'w1', 'w2', 'w3', 'w4', 'w5', 'w6',
-								'w7', 'w8', 'w9', 'w10', 'w11', 'w12', 'w13',
-								'w14', 'w15', 'w16', 'w17', 'w18', 'w19',
-								'w20', 'w21', 'w22', 'w23', 'w24', 'w25',
-								'w26', 'w27', 'w28', 'w29', 'w30' ]
+						categories : [ 'T1', 'T2', 'T3', 'T4', 'T5', 'T6',
+								'T7', 'T8', 'T9', 'T10', 'T11', 'T12', 'T13',
+								'T14', 'T15', 'T16', 'T17', 'T18', 'T19',
+								'T20', 'T21', 'T22', 'T23', 'T24', 'T25',
+								'T26', 'T27', 'T28', 'T29', 'T30' ]
 					},
 					tick : {
 						x : {
@@ -251,8 +252,8 @@
 	}
 	// drawing third graph when necessary use this function 
 	function showPidWhenGivenTopicAndYear(event_data, data,id_specific_topic) {
-		console.log("event_data",event_data);
-		document.getElementById(event_data.id).innerHTML = 'Associated topic  w'+(event_data.index+1);
+		console.log("id_specific_topic",id_specific_topic);
+		document.getElementById(event_data.id).innerHTML = 'Associated topic  T'+(event_data.index+1);
 		var PidArray = [];
 		var WeightAray = [ 'Weight-PID' ];
 		var countPid = 0;
@@ -293,12 +294,16 @@
 				}
 			},
 			axis : {
+				 rotated: true,
+				//Weight-PID
 				x : {
 					label : {
 						text : 'Pids',
 						position : 'outer-middle',
+						
 					},
 					type : 'category',
+					
 					categories : PidArray
 				},
 				tick : {
