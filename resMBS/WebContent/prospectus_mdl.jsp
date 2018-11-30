@@ -124,9 +124,8 @@
 
 										<div class="" role="tabpanel" data-example-id="togglable-tabs">
 											<div class="row">
-												<div class="col-md-6">
-													<ul id="myTab1" class="nav nav-tabs bar_tabs left "
-														role="tablist">
+												<div class="col-md-1">
+													<ul class="nav nav-tabs tabs-left">
 														<li role="presentation" class="active"><a
 															href="#tab_content11"
 															onclick="getDataForGivenYear('2002','chart_2002','Graph_for_specific_topic_2002')"
@@ -163,106 +162,136 @@
 															onclick="getDataForGivenYear('2008','chart_2008','Graph_for_specific_topic_2008')"
 															role="tab" id="profile-tabb4" data-toggle="tab"
 															aria-controls="profile" aria-expanded="false">2008</a></li>
+
 													</ul>
 												</div>
-											</div>
-											<div id="myTabContent2" class="tab-content">
-												<div role="tabpanel" class="tab-pane fade active in"
-													id="tab_content11" aria-labelledby="home-tab">
-													<div class="row">
-														<div class="col-md-6 ">
-															<div id="chart_2002"></div>
+
+												<div class="col-md-11">
+													<div id="myTabContent2" class="tab-content">
+														<div role="tabpanel" class="tab-pane fade active in"
+															id="tab_content11" aria-labelledby="home-tab">
+															<div class="row">
+																<div class="col-md-6 ">
+																	<br>
+																	<div id="chart_2002"></div>
+																</div>
+																<div class="col-md-6">
+																	<div id=Prospectus_of_2002></div>
+																	<div style="display: none;" class="x_content"
+																		id="Graph_for_specific_topic_2002"></div>
+																</div>
+															</div>
 														</div>
-														<div class="col-md-6">
+														<div role="tabpanel" class="tab-pane fade"
+															id="tab_content22" aria-labelledby="profile-tab">
+															<div class="row">
+																<div class="col-md-6 ">
+																	<br>
+																	<div id="chart_2003"></div>
 
-															<div id=Prospectus_of_2002></div>
+																</div>
+																<div class="col-md-6 ">
+																	<div id=Prospectus_of_2003></div>
 
-															<div style="display: none;" class="x_content"
-																id="Graph_for_specific_topic_2002"></div>
+																	<div style="display: none;" class="x_content"
+																		id="Graph_for_specific_topic_2003"></div>
+																</div>
+															</div>
+														</div>
+														<div role="tabpanel" class="tab-pane fade"
+															id="tab_content33" aria-labelledby="profile-tab">
+															<div class="row">
+																<div class="col-md-6">
+																	<br>
+																	<div id="chart_2004"></div>
+																</div>
+																<div class="col-md-6">
+																	<div id=Prospectus_of_2004></div>
+																	<div style="display: none;" class="x_content"
+																		id="Graph_for_specific_topic_2004"></div>
+																</div>
+															</div>
+														</div>
+														<div role="tabpanel" class="tab-pane fade"
+															id="tab_content44" aria-labelledby="profile-tab">
+															<div class="row">
+																<div class="col-md-6">
+																	<br>
+																	<div id="chart_2005"></div>
+																</div>
+																<div class="col-md-6">
+																	<div id=Prospectus_of_2005></div>
+																	<div style="display: none;" class="x_content"
+																		id="Graph_for_specific_topic_2005"></div>
+																</div>
+															</div>
+														</div>
+														<div role="tabpanel" class="tab-pane fade"
+															id="tab_content55" aria-labelledby="profile-tab">
+															<div class="row">
+																<div class="col-md-6">
+																	<br>
+																	<div id="chart_2006"></div>
+																</div>
+																<div class="col-md-6">
+																	<div id=Prospectus_of_2006></div>
+																	<div style="display: none;" class="x_content"
+																		id="Graph_for_specific_topic_2006"></div>
+																</div>
+															</div>
+														</div>
+														<div role="tabpanel" class="tab-pane fade"
+															id="tab_content66" aria-labelledby="profile-tab">
+															<div class="row">
+																<div class="col-md-6">
+																<br>
+																	<div id="chart_2007"></div>
+																</div>
+																<div class="col-md-6">
+																	<div id=Prospectus_of_2007></div>
+																	<div style="display: none;" class="x_content"
+																		id="Graph_for_specific_topic_2007"></div>
+																</div>
+															</div>
+														</div>
+														<div role="tabpanel" class="tab-pane fade"
+															id="tab_content77" aria-labelledby="profile-tab">
+															<div class="row">
+																<div class="col-md-6">
+																<br>
+																	<div id="chart_2008"></div>
+																</div>
+																<div class="col-md-6">
+																	<div id=Prospectus_of_2008></div>
+																	<div style="display: none;" class="x_content"
+																		id="Graph_for_specific_topic_2008"></div>
+																</div>
+
+															</div>
 														</div>
 													</div>
 												</div>
-												<div role="tabpanel" class="tab-pane fade"
-													id="tab_content22" aria-labelledby="profile-tab">
-													
-													
-															<div id="chart_2003"></div>
-													
-													
-															<div id=Prospectus_of_2003></div>
-
-															<div style="display: none;" class="x_content"
-																id="Graph_for_specific_topic_2003"></div>
-													
-													
-												</div>
-												<div role="tabpanel" class="tab-pane fade"
-													id="tab_content33" aria-labelledby="profile-tab">
-													<div id="chart_2004"></div>
-													<div>
-														<h2 id=Prospectus_of_2004></h2>
-													</div>
-													<div style="display: none;" class="x_content"
-														id="Graph_for_specific_topic_2004"></div>
-												</div>
-												<div role="tabpanel" class="tab-pane fade"
-													id="tab_content44" aria-labelledby="profile-tab">
-													<div id="chart_2005"></div>
-													<div>
-														<h2 id=Prospectus_of_2005></h2>
-													</div>
-													<div style="display: none;" class="x_content"
-														id="Graph_for_specific_topic_2005"></div>
-												</div>
-												<div role="tabpanel" class="tab-pane fade"
-													id="tab_content55" aria-labelledby="profile-tab">
-													<div id="chart_2006"></div>
-													<div>
-														<h2 id=Prospectus_of_2006></h2>
-													</div>
-													<div style="display: none;" class="x_content"
-														id="Graph_for_specific_topic_2006"></div>
-												</div>
-												<div role="tabpanel" class="tab-pane fade"
-													id="tab_content66" aria-labelledby="profile-tab">
-													<div id="chart_2007"></div>
-													<div>
-														<h2 id=Prospectus_of_2007></h2>
-													</div>
-													<div style="display: none;" class="x_content"
-														id="Graph_for_specific_topic_2007"></div>
-												</div>
-												<div role="tabpanel" class="tab-pane fade"
-													id="tab_content77" aria-labelledby="profile-tab">
-													<div id="chart_2008"></div>
-													<div>
-														<h2 id=Prospectus_of_2008></h2>
-													</div>
-													<div style="display: none;" class="x_content"
-														id="Graph_for_specific_topic_2008"></div>
-												</div>
 											</div>
+
 										</div>
-
 									</div>
+
+
 								</div>
-
-
 							</div>
 						</div>
-					</div>
 
+					</div>
 				</div>
 			</div>
+
+
+
+
+			<!-- footer content -->
+			<footer> </footer>
+			<!-- /footer content -->
 		</div>
-
-
-
-
-		<!-- footer content -->
-		<footer> </footer>
-		<!-- /footer content -->
-	</div>
 	</div>
 
 	<!-- jQuery -->
