@@ -234,15 +234,15 @@
 					},
 					y : {
 						label : {
-							text : ' Sum of weights',
+							text : ' Sum of Nominal values (Million $)',
 							position : 'outer-middle',
 						},
-						max : 33,
-						min : 0,
-						padding : {
-							top : 0,
-							bottom : 0
-						}
+//						max : 33,
+//						min : 0,
+//						padding : {
+//							top : 0,
+//							bottom : 0
+//						}
 					}
 				}
 			});
@@ -257,7 +257,7 @@
 		var WeightAray = [ 'Weight-PID' ];
 		var countPid = 0;
 		console.log("data",data[0]);
-		console.log("event_data",event_data);
+		//console.log("event_data",event_data);
 		var only_year_str= event_data.id.split("_");
 		//console.log('only_year_str',only_year_str[2]);
 		data.forEach(function(d) {
@@ -317,7 +317,7 @@
 				},
 				y : {
 					label : {
-						text : 'Weights',
+						text : 'Nominal value (Million $)',
 						position : 'outer-middle',
 					},
 					max : array[array.length]+0.2,

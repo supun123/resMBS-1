@@ -15,7 +15,7 @@ public class prospectus {
 	private String PID;
 	private String year;
 	private String Prospectus;
-	private String biggest_weight;
+	private String nominal_value_million;
 	private String associated_topic;
 	
 	public String getN_a() {
@@ -60,11 +60,11 @@ public class prospectus {
 	public void setProspectus(String prospectus) {
 		Prospectus = prospectus;
 	}
-	public String getBiggest_weight() {
-		return biggest_weight;
+	public String getNominal_value_million() {
+		return nominal_value_million;
 	}
-	public void setBiggest_weight(String biggest_weight) {
-		this.biggest_weight = biggest_weight;
+	public void setNominal_value_million(String nominal_value_million) {
+		this.nominal_value_million = nominal_value_million;
 	}
 	public String getAssociated_topic() {
 		return associated_topic;
