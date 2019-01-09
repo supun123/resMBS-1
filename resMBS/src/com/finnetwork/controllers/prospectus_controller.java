@@ -1,5 +1,6 @@
 package com.finnetwork.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -23,4 +24,5 @@ public List <prospectus>  get_prospectus() {
 		 tx.commit();
 		 return results;
 	}
+
 }

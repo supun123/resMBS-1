@@ -193,7 +193,7 @@
 					],
 					type : 'bar',
 					groups : [ [ temp_year ] ],
-					onclick : function(d, element) { //console.log("supun");
+					onclick : function(d, element) { 
 						showPidWhenGivenTopicAndYear(d, data,id_specific_topic);
 					}
 				},

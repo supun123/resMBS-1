@@ -85,4 +85,16 @@ public class topic_mdl {
 		Response response= Response.ok(prospectus_list,MediaType.APPLICATION_JSON).build();
 		return response;
 	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/sankey/{year}")
+	public Response getSankey(@PathParam("year") String year) {
+		prospectus_controller p_c = new prospectus_controller(); 
+		
+		
+		System.out.println("------->>>>>Sankey for prospectus");
+		//Response response= Response.ok(prospectus_list,MediaType.APPLICATION_JSON).build();
+		return null;
+	}
 }
