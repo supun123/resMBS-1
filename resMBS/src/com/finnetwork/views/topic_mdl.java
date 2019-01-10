@@ -11,14 +11,27 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.fasterxml.jackson.core.TreeNode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.finnetwork.controllers.APP_controller;
 import com.finnetwork.controllers.SEC_controller;
+import com.finnetwork.controllers.Sankey_graph_controller;
 import com.finnetwork.controllers.bubble_graph_controller;
 import com.finnetwork.controllers.prospectus_controller;
 import com.finnetwork.controllers.topic_mdl_controller;
+import com.finnetwork.controllers.Sankey_graph_controller;
 import com.finnetwork.models.topic_mdl_issuers;
+
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.finnetwork.models.OC_Link;
+import com.finnetwork.models.OC_Node;
+import com.finnetwork.models.TNIC2_Link;
+import com.finnetwork.models.TNIC2_Node;
+import com.finnetwork.models.Topic_mdl__sankey;
 
 import antlr.collections.List;
 
@@ -30,6 +43,7 @@ public class topic_mdl {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/issuers")
 	public Response getBaseNetwork() {
+		
 		topic_mdl_controller to_m_c = new topic_mdl_controller(); 
 		to_m_c.getCompanyData();
 		ObjectNode json_company_data = to_m_c.getCompanyData();
@@ -41,6 +55,8 @@ public class topic_mdl {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/issuers_FI_FC")
 	public Response Count_Fi_FC() {
+		
+		//System.out.println("------> ");
 		topic_mdl_controller to_m_c = new topic_mdl_controller(); 
 		
 		ObjectNode json_company_data = to_m_c.get_count_Fi();
@@ -54,6 +70,8 @@ public class topic_mdl {
 	public Response getBaseNetworkYear(@PathParam("id") String id) {
 		
 		topic_mdl_controller to_m_c = new topic_mdl_controller();
+		System.out.println("CCC ");
+		System.out.print(id);
 		JsonNode json_base_network_yearly = to_m_c.getIssuersDataForgivenData(id);
 		
 		Response response = Response.ok(json_base_network_yearly, MediaType.APPLICATION_JSON).build();		
@@ -85,4 +103,27 @@ public class topic_mdl {
 		Response response= Response.ok(prospectus_list,MediaType.APPLICATION_JSON).build();
 		return response;
 	}
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/sankey/{year}")
+	public Response bubble_sankey(@PathParam("year") String year) {
+		Sankey_graph_controller sankey = new Sankey_graph_controller();
+		ObjectNode sankey_list =(ObjectNode) sankey.get_sankey_data(year);
+		
+		System.out.println("AAAAAAAAAAAAAAAAAA-------->"+year);
+		
+		
+		
+		/*ObjectMapper objectMapper = new ObjectMapper();
+		ArrayNode arrayNode = objectMapper.valueToTree(oc_nodes);
+		ArrayNode arrayLink = objectMapper.valueToTree(oc_edges);
+		ObjectNode base_network = objectMapper.createObjectNode();
+		base_network.putArray("nodes").addAll(arrayNode);
+		base_network.putArray("links").addAll(arrayLink);*/
+		
+		
+		Response response= Response.ok(sankey_list,MediaType.APPLICATION_JSON).build();
+		return response;
+	}
+	
 }
