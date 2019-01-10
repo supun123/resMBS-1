@@ -116,7 +116,7 @@ public ObjectNode  get_sankey_data(String year) {
 		base_network.putArray("nodes").addAll(arrayNode_a);
 		base_network.putArray("links").addAll(arrayLink_b);
 		
-		System.out.println("@@_----------------->");
+		
 		System.out.println(base_network);
 		
 		
