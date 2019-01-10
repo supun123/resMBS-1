@@ -12,8 +12,8 @@
 
     d3.json("rest/topic/bubble/", function(error, data_a) {
         if (error) throw error;
-        //var colNames = "text,size,group\n" + text;
-        //var data = d3.csv.parse(colNames);
+        // var colNames = "text,size,group\n" + text;
+        // var data = d3.csv.parse(colNames);
         var data =data_a;
         console.log("test",data[0]);
         data.forEach(function(d) {
@@ -24,7 +24,7 @@
             .interpolate(d3.interpolateHcl)
             .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
 
-//unique cluster/group id's
+// unique cluster/group id's
         var cs = [];
         data.forEach(function(d){
             console.log("d==>",d);
@@ -50,11 +50,11 @@
         var radiusScal=d3.scale.linear()
             .domain([data[minIndex][1],data[maxIndex][1]])
             .range([10,80]);
-        //---------------------------------
-//create clusters and nodes
+        // ---------------------------------
+       // create clusters and nodes
         var clusters = new Array(m);
         var nodes = [];
-      //  console.log("final",data[0]);
+      // console.log("final",data[0]);
         for (var i = 0; i<n; i++){
             nodes.push(create_nodes(data,i));
         }
@@ -83,8 +83,11 @@
             console.log("mouseover",d)
             div.transition()
                 .duration(200)
-                .style("opacity", .9);
-            div	.html(d.text + "<br/>")
+                .style("opacity", 1)
+                .style("color","#FFFFFF")
+            	.style("background-color","#008000");
+            
+            div	.html("<p>"+d.text+"</p>"+ "<br/>")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
@@ -105,23 +108,24 @@
 
         node.append("circle")
             .style("fill", function (d) {
-                  console.log(d);
+                // console.log("--->",d);//--------------------------------------------------------
                 var group =d.cluster;
                 console.log('group :=',d.cluster);
-                return color(d.cluster);
+                return select_colour(d.cluster);
 
 
 
             })
             .attr("r", function(d){return d.radius});
 
-///---------------------------------------------------------------------
+// /---------------------------------------------------------------------
         node.append("text")
             .attr("dy", ".3em")
             .style("text-anchor", "middle")
+            .style("font-size", "8px")
             .text(function(d) {
-                console.log("text_abc",d.text.substring(0,5)); 
-                return d.text.substring(0,5); 
+                //console.log("text_abc",d.text.substring(0,5)); 
+                return d.text.substring(0, d.text.indexOf("+"));//d.text.substring(0,7); 
                 });
 
 
@@ -206,4 +210,99 @@
         }
         return false;
     };
+function select_colour(cluster) {
+	switch (cluster) {
+		case 0:
+			return  "#FF0000";
+        break;
+	    case 1:
+	    	return  "#8B0000";
+	        break;
+	    case 2:
+	    	return  "#FFA07A";
+	        break;
+	    case 3:
+	    	return  "#006400";
+	        break;
+	    case 4:
+	    	return  "#32CD32";
+	        break;
+	    case 5:
+	    	return  "#228B22";
+	        break;
+	    case  6:
+	    	return  "#8B4513";
+	        break;
+	    case  7:
+	    	return  "#B8860B";
+	        break;
+	    case  8:
+	    	return  "#BC8F8F";
+	        break;
+	    case  9:
+	    	return  "#FF1493";
+	        break;
+	    case  10:
+	    	return  "#FF69B4";
+	        break;
+	    case  11:
+	    	return  "#C71585";
+	        break;
+	    case  12:
+	    	return  "#FF6347";
+	        break;
+	    case  13:
+	    	return  "#FF7F50";//---------------
+	        break;
+	    case  14:
+	    	return  "#FF8C00";
+	        break;
+	    case  15:
+	    	return  "#FFFF00";
+	        break;
+	    case  16:
+	    	return  "#FFD700";
+	        break;
+	    case  17:
+	    	return  "#FFE4B5";
+	        break;
+	    case  18:
+	    	return  "#00FFFF";
+	        break;
+	    case  19:
+	    	return  "#4682B4";
+	        break;
+	    case  20:
+	    	return  "#0000FF";
+	        break;
+	    case  21:
+	    	return  "#FFFFFF";
+	        break;
+	    case  22:
+	    	return  "#FFE4E1";
+	        break;
+	    case  23:
+	    	return  "#191970";
+	        break;
+	    case  24:
+	    	return  "#FF00FF";
+	        break;
+	    case  25:
+	    	return  "#8B008B";
+	        break;
+	    case  26:
+	    	return  "#BA55D3";
+	        break;
+	    case  27:
+	    	return  "#778899";
+	        break;
+	    case  28:
+	    	return  "#808080";
+	        break;
+	    case  29:
+	    	return  "#2F4F4F";
+	        break;
+    }
 
+
+}

@@ -41,16 +41,13 @@
 	position: relative;
 	overflow: hidden;
 }
-
 .active1 {
 	background-color: #52B9FA;
 	color: white;
 }
-
 .axis {
 	font: 10px sans-serif;
 }
-
 .axis path, .axis line {
 	fill: none;
 	stroke: #000;
@@ -156,7 +153,6 @@
 															onclick="getDataForGivenYear('2004','chart_2004','Graph_for_specific_topic_2004')"
 															role="tab" id="profile-tabb3" data-toggle="tab"
 															aria-controls="profile" aria-expanded="false">2004</a></li>
-
 														<li role="presentation" class=""><a
 															href="#tab_content44"
 															onclick="getDataForGivenYear('2005','chart_2005','Graph_for_specific_topic_2005')"
