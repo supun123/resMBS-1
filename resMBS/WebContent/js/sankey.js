@@ -1,21 +1,33 @@
+//d3.select("svg").remove();
+	
+	
 function call(year) {
-	if (year != '2002') {
-		$('#2002').removeClass('active');
-	}
+	console.log("test....");
+	
+	d3.select("#sankey_svg").selectAll("svg").remove();
+    var graphDiv = document.getElementById("sankey_svg");
 
-	d3.select("svg").remove();
-	var newSvg = document.getElementById('svg');
-	newSvg.outerHTML += '<svg   width="1000" height="10000"></svg>';
+    var svg = d3.select(graphDiv).append("svg")
+                            .attr('width', '100%')
+                            .attr('height', '100%');
 
-	var svg = d3.select("svg"), width = +svg.attr("width"), height = +svg
-			.attr("height");
+    var width = graphDiv.clientWidth;
+    var height = graphDiv.clientHeight;
+    
+    console.log("h :"+height+" w : "+width);
+	
+//	var newSvg = document.getElementById('svg');
+//	newSvg.outerHTML += '<svg   width="1000" height="900"></svg>';
+//
+//	var svg = d3.select("svg"), width = +svg.attr("width"), height = +svg
+//			.attr("height");
 
 	var formatNumber = d3.format(",.0f"), format = function(d) {
 		return formatNumber(d) + " TWh";
 	}, color = d3.scaleOrdinal(d3.schemeCategory10);
 
 	var sankey = d3.sankey().nodeWidth(15).nodePadding(10).extent(
-			[ [ 1, 1 ], [ width - 1, height - 6 ] ]);
+			[ [ 1, 1 ], [ width - 1, height - 5 ] ]);
 
 	var link = svg.append("g").attr("class", "links").attr("fill", "none")
 			.attr("stroke", "#000").attr("stroke-opacity", 0.2).selectAll(
@@ -25,6 +37,12 @@ function call(year) {
 			"sans-serif").attr("font-size", 10).selectAll("g");
 
 	var graph;
+	
+	if (year != '2002') {
+		$('#2002').removeClass('active');
+	}
+
+	
 	d3.json("rest/topic/sankey/" + year, function(error, energy) {
 
 		if (error)
@@ -79,18 +97,20 @@ function call(year) {
 			return d.name + "\n" + format(d.value);
 		});
 	});
+	
+	// the function for moving the nodes
+	function dragmove(d) {
+
+		var rectY = d3.select(this).select("rect").attr("y");
+
+		d.y0 = d.y0 + d3.event.dy;
+
+		var yTranslate = d.y0 - rectY;
+
+		d3.select(this).attr("transform", "translate(0" + "," + (yTranslate) + ")");
+
+		sankey.update(graph);
+		link.attr("d", d3.sankeyLinkHorizontal());
+	}
 }
-// the function for moving the nodes
-function dragmove(d) {
 
-	var rectY = d3.select(this).select("rect").attr("y");
-
-	d.y0 = d.y0 + d3.event.dy;
-
-	var yTranslate = d.y0 - rectY;
-
-	d3.select(this).attr("transform", "translate(0" + "," + (yTranslate) + ")");
-
-	sankey.update(graph);
-	link.attr("d", d3.sankeyLinkHorizontal());
-}
