@@ -171,11 +171,11 @@
 														<div role="tabpanel" class="tab-pane fade active in"
 															id="tab_content11" aria-labelledby="home-tab">
 															<div class="row">
-																<div class="col-md-6 ">
+																<div class="col-md-6  col-sm-6 col-xl-6 col-6">
 																	<br>
 																	<div id="chart_2002"></div>
 																</div>
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<div id=Prospectus_of_2002></div>
 																	<div style="display: none;" class="x_content"
 																		id="Graph_for_specific_topic_2002"></div>
@@ -185,12 +185,12 @@
 														<div role="tabpanel" class="tab-pane fade"
 															id="tab_content22" aria-labelledby="profile-tab">
 															<div class="row">
-																<div class="col-md-6 ">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<br>
 																	<div id="chart_2003"></div>
 
 																</div>
-																<div class="col-md-6 ">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<div id=Prospectus_of_2003></div>
 
 																	<div style="display: none;" class="x_content"
@@ -201,11 +201,11 @@
 														<div role="tabpanel" class="tab-pane fade"
 															id="tab_content33" aria-labelledby="profile-tab">
 															<div class="row">
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<br>
 																	<div id="chart_2004"></div>
 																</div>
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<div id=Prospectus_of_2004></div>
 																	<div style="display: none;" class="x_content"
 																		id="Graph_for_specific_topic_2004"></div>
@@ -215,11 +215,11 @@
 														<div role="tabpanel" class="tab-pane fade"
 															id="tab_content44" aria-labelledby="profile-tab">
 															<div class="row">
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<br>
 																	<div id="chart_2005"></div>
 																</div>
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<div id=Prospectus_of_2005></div>
 																	<div style="display: none;" class="x_content"
 																		id="Graph_for_specific_topic_2005"></div>
@@ -229,11 +229,11 @@
 														<div role="tabpanel" class="tab-pane fade"
 															id="tab_content55" aria-labelledby="profile-tab">
 															<div class="row">
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<br>
 																	<div id="chart_2006"></div>
 																</div>
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<div id=Prospectus_of_2006></div>
 																	<div style="display: none;" class="x_content"
 																		id="Graph_for_specific_topic_2006"></div>
@@ -243,11 +243,11 @@
 														<div role="tabpanel" class="tab-pane fade"
 															id="tab_content66" aria-labelledby="profile-tab">
 															<div class="row">
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																<br>
 																	<div id="chart_2007"></div>
 																</div>
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<div id=Prospectus_of_2007></div>
 																	<div style="display: none;" class="x_content"
 																		id="Graph_for_specific_topic_2007"></div>
@@ -257,11 +257,11 @@
 														<div role="tabpanel" class="tab-pane fade"
 															id="tab_content77" aria-labelledby="profile-tab">
 															<div class="row">
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																<br>
 																	<div id="chart_2008"></div>
 																</div>
-																<div class="col-md-6">
+																<div class="col-md-6 col-sm-6 col-xl-6 col-6">
 																	<div id=Prospectus_of_2008></div>
 																	<div style="display: none;" class="x_content"
 																		id="Graph_for_specific_topic_2008"></div>
