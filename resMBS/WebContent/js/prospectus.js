@@ -1,13 +1,47 @@
+hiding('2002');
+function hiding(year){
+	document.getElementById('checkbox2002').style.display = 'block';
+	document.getElementById('checkbox2003').style.display = 'block';
+	document.getElementById('checkbox2004').style.display = 'block';
+	document.getElementById('checkbox2005').style.display = 'block';
+	document.getElementById('checkbox2006').style.display = 'block';
+	document.getElementById('checkbox2007').style.display = 'block';
+	document.getElementById('checkbox2008').style.display = 'block';
+	var link = document.getElementById("checkbox"+year);
+	link.style.display = 'none';
+}
+function compare(year){
+	var x = document.getElementById('checkbox'+year);
+	var graph1 = document.getElementById('chart_'+year+'yes');
+	var graph2 = document.getElementById('Graph_for_specific_topic'+year+'yes');
+	var text = document.getElementById('Prospectus_of_'+year+'yes');
+	//Prospectus_of_2005yes
+if(x.checked){
+	getDataForGivenYear(year, 'chart_'+year, 'Graph_for_specific_topic'+year,'yes');
+	graph1.style.display = "block";
+	graph2.style.display = "block";
+	text.style.display = "block";
+  }else{
+	  graph1.style.display ="none";
+	  graph2.style.display ="none";
+	  text.style.display = "none";
+  }
+}
+
+
+
 function sortNumber(a, b) {
 	return a - b;
 }
 
 // ------------------------------------------
-getDataForGivenYear('2002', 'chart_2002', 'Graph_for_specific_topic_2002');
+getDataForGivenYear('2002', 'chart_2002', 'Graph_for_specific_topic_2002', '');
+
 function sortNumber(a, b) {
 	return a - b;
 }
-function getDataForGivenYear(year, id_chart, id_specific_topic) {
+function getDataForGivenYear(year, id_chart, id_specific_topic, repet) {
+	
 	d3.json("rest/topic/prospectus/", function(error, data) {
 		// ----- first graph
 		var year_count = {
@@ -199,14 +233,21 @@ function getDataForGivenYear(year, id_chart, id_specific_topic) {
 
 				],
 				type : 'bar',
+				tick : {
+					rotate : 85,
+					multiline : false
+				},
 				groups : [ [ temp_year ] ],
-				onclick : function(d, element) { // console.log("supun");
-					showPidWhenGivenTopicAndYear(d, data, id_specific_topic);
+				onclick : function(d, element) {
+					console.log("supun");
+					console.log('!!!!!!!id_specific_topic:--->',
+							id_specific_topic);
+					showPidWhenGivenTopicAndYear(d, data, id_specific_topic,repet);
 				}
 			},
-			bindto : '#' + id_chart,
+			bindto : '#' + id_chart + repet,
 			size : {
-				width : 550
+				width : 480
 			// height: 300
 			},
 			grid : {
@@ -267,9 +308,10 @@ function getDataForGivenYear(year, id_chart, id_specific_topic) {
 	});
 }
 // drawing third graph when necessary use this function
-function showPidWhenGivenTopicAndYear(event_data, data, id_specific_topic) {
+function showPidWhenGivenTopicAndYear(event_data, data, id_specific_topic,repet) {
 	console.log("id_specific_topic", id_specific_topic);
-	document.getElementById(event_data.id).innerHTML = 'Associated topic  T'
+	var idString=event_data.id+repet;
+	document.getElementById(idString).innerHTML = 'Associated topic  T'
 			+ (event_data.index + 1);
 	var PidArray = [];
 	var WeightAray = [ 'Weight-PID' ];
@@ -302,9 +344,9 @@ function showPidWhenGivenTopicAndYear(event_data, data, id_specific_topic) {
 			},
 			groups : [ [ 'Weight-PID' ] ]
 		},
-		bindto : '#' + id_specific_topic,
+		bindto : '#' + id_specific_topic + repet,
 		size : {
-			width : 550
+			width : 480
 		// height: 300
 		},
 		grid : {
@@ -361,12 +403,12 @@ function showPidWhenGivenTopicAndYear(event_data, data, id_specific_topic) {
 			}
 		}
 	});
-
-	var x = document.getElementById(id_specific_topic);
+	var string = id_specific_topic + repet;
+	
+	var x = document.getElementById(string);
 	if (x.style.display === "none") {
 		x.style.display = "block";
 	} else {
 		x.style.display = "none";
 	}
-
 }
