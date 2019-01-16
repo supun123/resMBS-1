@@ -124,7 +124,7 @@
 
 										<div class="" role="tabpanel" data-example-id="togglable-tabs">
 											<div class="row">
-												<div class="col-md-2">
+												<div class="col-sm-2">
 													<div class="col-md-6">
 														<ul class="nav nav-tabs tabs-left">
 															<%
@@ -181,7 +181,7 @@
 														</ul>
 													</div>
 												</div>
-												<div class="col-md-10">
+												<div class="col-sm-10" style="margin-left:0px " >
 													<div id="myTabContent2" class="tab-content">
 														<div role="tabpanel" class="tab-pane fade active in"
 															id="tab_content11" aria-labelledby="home-tab">

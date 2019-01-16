@@ -1,5 +1,6 @@
 package com.finnetwork.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -16,11 +17,12 @@ public List <prospectus>  get_prospectus() {
 		Session session = hibernate_util.getSession();
 		 Transaction tx=session.beginTransaction();
 
-		String hql = "SELECT PID,year,Prospectus,biggest_weight,associated_topic FROM prospectus";
+		String hql = "SELECT PID,year,Prospectus,nominal_value_million,associated_topic FROM prospectus";
 		Query query = session.createQuery(hql);
 		List results = query.list();
 		System.out.println(results.get(0));
 		 tx.commit();
 		 return results;
 	}
+
 }

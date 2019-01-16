@@ -88,20 +88,53 @@ public ObjectNode  get_sankey_data(String year) {
 		 ArrayList<link> links = new ArrayList<link>();
 		int count=0;
 		for(int i=0;i<arrayNode.size();i++) {
-		
-			System.out.println(arrayNode.get(i).get(2).asDouble());
-			node node_1=new node();
-			node node_2=new node();
-			node_1.setName(arrayNode.get(i).get(0).asText());
-			node_list.add(node_1);
-			node_2.setName(arrayNode.get(i).get(3).asText());
-			node_list.add(node_2);
-			link link=new link();
+			//System.out.println(arrayNode.get(i).get(2).asDouble());
 			
-			link.setSource(count);
-			count=count+1;
-			link.setTarget(count);
-			count=count+1;
+			
+			boolean isInNode_list_FI_Name=false;
+			int index_Innode_list_FI_Name=-1;
+			
+			boolean isInNode_list_Topic_Name=false;
+			int index_Innode_list_Topic_Name=-1;
+			
+			link link=new link();
+			for(int x =0;x<node_list.size();x++) {
+				if(node_list.get(x).getName().equals(arrayNode.get(i).get(0).asText())) {
+					isInNode_list_FI_Name=true;
+					index_Innode_list_FI_Name=x;
+				}
+				if(node_list.get(x).getName().equals(arrayNode.get(i).get(3).asText())) {
+					 isInNode_list_Topic_Name=true;
+					 index_Innode_list_Topic_Name=x;
+				}
+				
+			}
+			if(!isInNode_list_FI_Name) {
+				node node_1=new node();
+				node_1.setName(arrayNode.get(i).get(0).asText());
+				node_list.add(node_1);
+				link.setSource(node_list.size()-1);//---
+			}else {
+				if(index_Innode_list_FI_Name<0) {System.out.println("Errorr index_Innode_list_FI_Name<0 @@@@@@@@@");}
+				link.setSource(index_Innode_list_FI_Name);
+			}
+			
+			if(!isInNode_list_Topic_Name) {
+				node node_2=new node();
+				node_2.setName(arrayNode.get(i).get(3).asText());
+				node_list.add(node_2);
+				link.setTarget(node_list.size()-1);
+			}else {
+				if(index_Innode_list_Topic_Name<0) {System.out.println("Errorr index_Innode_list_Topic_Name<0 @@@@@@@@@");}
+				link.setTarget(index_Innode_list_Topic_Name);
+			}
+			
+			
+			
+			//link.setSource(count);
+			//count=count+1;
+			//link.setTarget(count);
+			//count=count+1;
 		     
 			link.setValue(arrayNode.get(i).get(2).asDouble());
 			links.add(link);
