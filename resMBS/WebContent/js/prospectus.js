@@ -1,3 +1,4 @@
+
 hiding('2002');
 function hiding(year){
 	document.getElementById('checkbox2002').style.display = 'block';
@@ -294,7 +295,6 @@ function getDataForGivenYear(year, id_chart, id_specific_topic, repet) {
 		//-----------------------------------------------------------------------------
 		/*var topic = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
-
 		var new_arr = [];
 		data.forEach(function(d) {
 			// console.log(d);
@@ -312,7 +312,6 @@ function getDataForGivenYear(year, id_chart, id_specific_topic, repet) {
 				} else if (d[4] == 'w5') {
 					topic[4] = topic[4] + parseFloat(d[3]);
 				}
-
 				else if (d[4] == 'w6') {
 					topic[5] = topic[5] + parseFloat(d[3]);
 				} else if (d[4] == 'w7') {
@@ -365,7 +364,6 @@ function getDataForGivenYear(year, id_chart, id_specific_topic, repet) {
 					topic[29] = topic[29] + parseFloat(d[3]);
 				}
 			}
-
 		});
 		var temp_year = 'Prospectus_of_' + year;
 		var chart = c3.generate({
@@ -379,7 +377,6 @@ function getDataForGivenYear(year, id_chart, id_specific_topic, repet) {
 								topic[20], topic[21], topic[22], topic[23],
 								topic[24], topic[25], topic[26], topic[27],
 								topic[28], topic[29] ],
-
 				],
 				type : 'bar',
 				tick : {
@@ -427,7 +424,6 @@ function getDataForGivenYear(year, id_chart, id_specific_topic, repet) {
 				},
 				tick : {
 					x : {
-
 						multiline : false,
 						culling : {
 							max : 1
@@ -436,7 +432,6 @@ function getDataForGivenYear(year, id_chart, id_specific_topic, repet) {
 					label : {
 						text : 'topics',
 						position : 'center-bottom',
-
 					},
 				},
 				y : {
@@ -453,7 +448,6 @@ function getDataForGivenYear(year, id_chart, id_specific_topic, repet) {
 				}
 			}
 		});
-
 	});*/
 }
 // drawing third graph when necessary use this function
@@ -560,7 +554,6 @@ function showPidWhenGivenTopicAndYear(event_data, data, id_specific_topic,repet)
 				PidArray[countPid] = d[0];
 				WeightAray[countPid + 1] = parseFloat(d[3]);
 				countPid++;
-
 			}
 		}
 	})
@@ -569,7 +562,6 @@ function showPidWhenGivenTopicAndYear(event_data, data, id_specific_topic,repet)
 	var chart = c3.generate({
 		data : {
 			columns : [ WeightAray,
-
 			],
 			type : 'bar',
 			colors : {
@@ -597,7 +589,6 @@ function showPidWhenGivenTopicAndYear(event_data, data, id_specific_topic,repet)
 				label : {
 					text : 'Pids',
 					position : 'outer-middle',
-
 				},
 				type : 'category',
 				tick : {
@@ -605,12 +596,10 @@ function showPidWhenGivenTopicAndYear(event_data, data, id_specific_topic,repet)
 					multiline : false
 				},
 				height : 80,
-
 				categories : PidArray
 			},
 			tick : {
 				x : {
-
 					multiline : false,
 					culling : {
 						max : 1
@@ -619,7 +608,6 @@ function showPidWhenGivenTopicAndYear(event_data, data, id_specific_topic,repet)
 				label : {
 					text : 'PID',
 					position : 'center-bottom',
-
 				},
 			},
 			y : {
